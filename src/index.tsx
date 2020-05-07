@@ -118,7 +118,7 @@ class HomePage extends React.Component<object, State> {
 
 const Links = () => (
     <>
-        <a style={linkStyle} href="https://twitter.com/ajfemin">Twitter</a>
+        <a style={linkStyle} href="https://twitter.com/ajflemin">Twitter</a>
         <a style={linkStyle} href="https://github.com/ajfleming1">Github</a>
         <a style={linkStyle} href="https://www.goodreads.com/user/show/44820994-drew-fleming">Goodreads</a>
     </>
