@@ -25,7 +25,7 @@ const contentStyle: CSS.Properties = {
     fontFamily: "Roboto Mono, monospace",
     lineHeight: '24px',
     display: 'block'
-}
+};
 
 const buttonStyle: CSS.Properties = {
     width: '120px',
@@ -43,20 +43,14 @@ const linkStyle: CSS.Properties = {
 };
 
 type ImagesType = "face01" | "face02" | "face03" | "face04";
+type State = Readonly<typeof initialState>;
+type IHeaderProps = { currentImage: any };
+type IContentProps = { version: "short" | "long", onClick: () => void };
+
 const initialState = {
     version: "short" as "short" | "long",
     currentImage: "face01" as ImagesType
 }
-
-type State = Readonly<typeof initialState>;
-type IHeaderProps = {
-    currentImage: any
-};
-
-type IContentProps = {
-    version: "short" | "long",
-    onClick: () => void
-};
 
 const updateContent = (prevState: State) => {
     if (prevState.version === "long") {
@@ -100,7 +94,7 @@ class HomePage extends React.Component<object, State> {
         this.timer = setTimeout(
             this.handleUpdateImage, 5000
         );
-        
+
         this.img = getFace(this.state.currentImage);
         return (
             <div>
@@ -120,7 +114,7 @@ class HomePage extends React.Component<object, State> {
     };
 
     handleUpdateImage = () => {
-        this.timer=setTimeout(
+        this.timer = setTimeout(
             this.handleUpdateImage, 5000
         );
 
@@ -135,6 +129,8 @@ const Links = () => (
         <a style={linkStyle} href="https://twitter.com/ajflemin">Twitter</a>
         <a style={linkStyle} href="https://github.com/ajfleming1">Github</a>
         <a style={linkStyle} href="https://www.goodreads.com/user/show/44820994-drew-fleming">Goodreads</a>
+        <a style={linkStyle} href="https://www.linkedin.com/in/ajfleming1/">LinkedIn</a>
+        <a style={linkStyle} href="https://angel.co/u/drew-fleming">AngelList</a>
     </>
 );
 
@@ -149,14 +145,14 @@ const Content = (props: IContentProps) => (
                         disabled={props.version === "short"}
                         onClick={props.onClick}
                         style={buttonStyle}
-                        color={props.version === "short" ? "dark" : "danger"}>
+                        color={props.version === "short" ? "danger" : "default"}>
                         Short
                         </Button>
                     <Button
                         disabled={props.version === "long"}
                         onClick={props.onClick}
                         style={buttonStyle}
-                        color={props.version === "long" ? "dark" : "danger"}>
+                        color={props.version === "long" ? "danger" : "default"}>
                         Long</Button>
                     <br /> <br />
                     <div>
@@ -172,7 +168,7 @@ const Content = (props: IContentProps) => (
     </div>
 );
 
-const Image = (props: {currentImage: ImagesType}) => (<img style={imgStyle} src={props.currentImage} alt="Drew's Face" />)
+const Image = (props: { currentImage: ImagesType }) => (<img style={imgStyle} src={props.currentImage} alt="Drew's Face" />)
 
 const Heading = (props: IHeaderProps) => {
     return (

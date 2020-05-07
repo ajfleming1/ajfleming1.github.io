@@ -28,6 +28,6 @@ module.exports = {
         new HtmlWebPackPlugin({template: "./src/index.html", filename: "./index.html" })
     ],
     performance: { hints: false },
-    watch: true,
+    watch: false,
     devtool: "source-map"
 };
