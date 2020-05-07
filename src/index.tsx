@@ -49,8 +49,7 @@ const initialState = {
 }
 
 type State = Readonly<typeof initialState>;
-type IImageProps = {
-    onTimeOut: () => void,
+type IHeaderProps = {
     currentImage: any
 };
 
@@ -96,12 +95,16 @@ const getFace = (image: ImagesType) => {
 class HomePage extends React.Component<object, State> {
     state: State = initialState;
     img!: typeof face01;
+    timer!: any;
     render() {
+        this.timer = setTimeout(
+            this.handleUpdateImage, 5000
+        );
+        
         this.img = getFace(this.state.currentImage);
         return (
             <div>
                 <Heading
-                    onTimeOut={this.handleUpdateImage}
                     currentImage={this.img}
                 />
                 <Content
@@ -112,7 +115,18 @@ class HomePage extends React.Component<object, State> {
         );
     }
 
-    handleUpdateImage = () => this.setState(updateImage);
+    componentDidUpdate() {
+        clearTimeout(this.timer);
+    };
+
+    handleUpdateImage = () => {
+        this.timer=setTimeout(
+            this.handleUpdateImage, 5000
+        );
+
+        this.setState(updateImage)
+    };
+
     handleOnClick = () => this.setState(updateContent);
 }
 
@@ -158,13 +172,9 @@ const Content = (props: IContentProps) => (
     </div>
 );
 
-const Image = (props: IImageProps) => (<img style={imgStyle} src={props.currentImage} alt="Drew's Face" />)
+const Image = (props: {currentImage: ImagesType}) => (<img style={imgStyle} src={props.currentImage} alt="Drew's Face" />)
 
-const Heading = (props: IImageProps) => {
-    setTimeout(
-        props.onTimeOut, 5000
-    );
-
+const Heading = (props: IHeaderProps) => {
     return (
         <header className="masthead">
             <div className="overlay"></div>
@@ -176,7 +186,6 @@ const Heading = (props: IImageProps) => {
                                 <small><br />Software Developer</small>
                             </h1>
                             <Image
-                                onTimeOut={props.currentImage}
                                 currentImage={props.currentImage}
                             />
                             <hr />
