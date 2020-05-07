@@ -126,23 +126,31 @@ const Links = () => (
 
 const Content = (props: IContentProps) => (
     <div className="container">
-
         <div className="row">
-
             <div className="col-lg-8 col-md-10 mx-auto">
-            <Links />
-            <br /> <br />
+                <Links />
+                <br /> <br />
                 <div className="post-preview">
-
-                    <Button onClick={props.onClick} style={buttonStyle} color="danger">Short</Button>
-                    <Button onClick={props.onClick} style={buttonStyle} color="info">Long</Button>
+                    <Button
+                        disabled={props.version === "short"}
+                        onClick={props.onClick}
+                        style={buttonStyle}
+                        color={props.version === "short" ? "dark" : "danger"}>
+                        Short
+                        </Button>
+                    <Button
+                        disabled={props.version === "long"}
+                        onClick={props.onClick}
+                        style={buttonStyle}
+                        color={props.version === "long" ? "dark" : "danger"}>
+                        Long</Button>
                     <br /> <br />
                     <div>
-                        {props.version === "short" && <p style={contentStyle}>My name is Drew Fleming and I am an avid web developer. I have been a professional developer for the last 10 years. When not coding, I enjoy yoga, spinning, reading, drinking wine, and hanging out with my wife.</p>}
+                        {props.version === "short" && <p style={contentStyle}>Greetings! My name is Drew and I am an avid web developer. I have been a professional developer for the last 10 years. When not coding, I enjoy yoga, spinning, reading, drinking wine, and hanging out with my wife.</p>}
 
-                        {props.version === "long" && <p style={contentStyle}>Greetings! My name is Drew Fleming and I am an avid web developer. I earned my degree in computer science in 2007 and immediately after I started my career as a software tester. As long as I can remember I wanted to write code for a living and I was given the opportunity to do so in 2009. Since then, I have been a full time software generalist developer with a focus on developing for the web.</p>}
+                        {props.version === "long" && <p style={contentStyle}>Greetings! My name is Drew Fleming and I am an avid web developer. I earned my degree in computer science in 2007 and immediately after I started my career as a software tester. As long as I can remember I wanted to write code for a living and I was given the opportunity to do so in 2009. Since then, I have been a full stack developer and over the years have gained expert level skills in .NET and a deep passion for developing for the web.</p>}
 
-                        {props.version === "long" && <p style={contentStyle}>I read programming books every single day and I love learning new technologies and languages. I especially enjoying working on projects with the new stuff I learn. When I am not coding or reading, I like to spend my time practicing yoga or spinning. I also enjoy drinking wine, cooking, hanging out with my wife, friends, and family.</p>}
+                        {props.version === "long" && <p style={contentStyle}>I read programming books every single day and I love learning new technologies and languages. I especially enjoy working on projects with the new stuff I learn. When I am not coding or reading, I like to spend my time practicing yoga or spinning. I also enjoy drinking wine, baking, and hanging out with my wife, friends, and family.</p>}
                     </div>
                 </div>
             </div>
