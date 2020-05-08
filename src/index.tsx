@@ -10,10 +10,10 @@ import CSS from 'csstype';
 
 const imgStyle: CSS.Properties = {
     borderRadius: '50%',
-    width: '200px',
-    height: '200px',
-    marginLeft: '400px',
-    marginTop: '-150px'
+    width: '25%',
+    height: '25%',
+    marginLeft: '90%',
+    marginTop: '-20%'
 };
 
 const siteHeading: CSS.Properties = {
@@ -28,16 +28,16 @@ const contentStyle: CSS.Properties = {
 };
 
 const buttonStyle: CSS.Properties = {
-    width: '120px',
+    width: '25%',
     border: '2px solid #96979c',
-    marginLeft: '25px',
+    marginLeft: '1%',
     fontWeight: 'bold',
     fontFamily: "Roboto Mono, monospace"
 };
 
 const linkStyle: CSS.Properties = {
-    width: '120px',
-    marginLeft: '25px',
+    width: '10%',
+    marginLeft: '5%',
     fontWeight: 'bold',
     fontFamily: "Roboto Mono, monospace"
 };
@@ -126,11 +126,11 @@ class HomePage extends React.Component<object, State> {
 
 const Links = () => (
     <>
-        <a style={linkStyle} href="https://twitter.com/ajflemin">Twitter</a>
-        <a style={linkStyle} href="https://github.com/ajfleming1">Github</a>
-        <a style={linkStyle} href="https://www.goodreads.com/user/show/44820994-drew-fleming">Goodreads</a>
-        <a style={linkStyle} href="https://www.linkedin.com/in/ajfleming1/">LinkedIn</a>
-        <a style={linkStyle} href="https://angel.co/u/drew-fleming">AngelList</a>
+        <a style={linkStyle} href="https://twitter.com/ajflemin"><i className="fab fa-twitter"></i></a>
+        <a style={linkStyle} href="https://github.com/ajfleming1"><i className="fab fa-github"></i></a>
+        <a style={linkStyle} href="https://www.goodreads.com/user/show/44820994-drew-fleming"><i className="fab fa-goodreads-g"></i></a>
+        <a style={linkStyle} href="https://www.linkedin.com/in/ajfleming1/"><i className="fab fa-linkedin-in"></i></a>
+        <a style={linkStyle} href="https://angel.co/u/drew-fleming"><i className="fab fa-angellist"></i></a>
     </>
 );
 
