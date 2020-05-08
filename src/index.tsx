@@ -13,7 +13,7 @@ const imgStyle: CSS.Properties = {
     width: '25%',
     height: '25%',
     marginLeft: '90%',
-    marginTop: '-20%'
+    marginTop: '-15%'
 };
 
 const siteHeading: CSS.Properties = {
@@ -178,9 +178,9 @@ const Heading = (props: IHeaderProps) => {
                 <div className="row">
                     <div className="col-lg-8 col-md-10 mx-auto">
                         <div>
-                            <h1 style={siteHeading}>Drew Fleming
+                            <h2 style={siteHeading}>Drew Fleming
                                 <small><br />Software Developer</small>
-                            </h1>
+                            </h2>
                             <Image
                                 currentImage={props.currentImage}
                             />
