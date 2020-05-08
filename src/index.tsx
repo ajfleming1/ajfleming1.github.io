@@ -140,7 +140,7 @@ const Content = (props: IContentProps) => (
             <div className="col-lg-8 col-md-10 mx-auto">
                 <Links />
                 <br /> <br />
-                <div className="post-preview">
+                <div>
                     <Button
                         disabled={props.version === "short"}
                         onClick={props.onClick}
@@ -172,8 +172,7 @@ const Image = (props: { currentImage: ImagesType }) => (<img style={imgStyle} sr
 
 const Heading = (props: IHeaderProps) => {
     return (
-        <header className="masthead">
-            <div className="overlay"></div>
+        <header>
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8 col-md-10 mx-auto">
