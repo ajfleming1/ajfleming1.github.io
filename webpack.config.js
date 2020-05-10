@@ -29,5 +29,10 @@ module.exports = {
     ],
     performance: { hints: false },
     watch: false,
-    devtool: "source-map"
+    devtool: "source-map",
+    externals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM',
+        'react-router': 'ReactRouter'
+    }
 };
