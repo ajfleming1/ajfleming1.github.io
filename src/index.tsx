@@ -131,6 +131,7 @@ const Links = () => (
         <a style={linkStyle} href="https://www.goodreads.com/user/show/44820994-drew-fleming"><i className="fab fa-goodreads-g"></i></a>
         <a style={linkStyle} href="https://www.linkedin.com/in/ajfleming1/"><i className="fab fa-linkedin-in"></i></a>
         <a style={linkStyle} href="https://angel.co/u/drew-fleming"><i className="fab fa-angellist"></i></a>
+        <a style={linkStyle} href="mailto:andrewfleming@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a>
     </>
 );
 
