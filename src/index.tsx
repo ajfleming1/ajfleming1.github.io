@@ -6,6 +6,7 @@ import face01 = require('./img/face01.png');
 import face02 = require('./img/face02.png');
 import face03 = require('./img/face03.png');
 import face04 = require('./img/face04.png');
+import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 
 type ImagesType = "face01" | "face02" | "face03" | "face04";
